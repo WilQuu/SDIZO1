@@ -7,10 +7,10 @@
 
 
 class Array {
-public:
+private:
     int size;
     int *headPointer;
-
+public:
     Array();
 
     ~Array();
@@ -36,3 +36,4 @@ public:
 
 
 #endif //SDIZO1_ARRAY_H
+
