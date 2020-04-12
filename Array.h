@@ -36,4 +36,3 @@ public:
 
 
 #endif //SDIZO1_ARRAY_H
-
