@@ -17,6 +17,9 @@ struct node {
         this->parent = parent;
         this->value = value;
     }
+    void changeValue(int value){
+        this->value=value;
+    }
 };
 
 class BinarySearchTree {
@@ -32,7 +35,7 @@ public:
 
     void addKey(int value);
 
-    void removeKey(int key);
+    void removeKey(int value);
 
     void balanceTree();
 
@@ -43,3 +46,4 @@ public:
 
 
 #endif //UNTITLED_BINARYSEARCHTREE_H
+
