@@ -29,6 +29,8 @@ public:
 
     void deleteElement(int index);
 
+    void find(int value);
+
     void printArray();
 
 
