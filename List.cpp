@@ -14,7 +14,11 @@ List::List() {
 }
 
 List::~List() {
-    //todo
+    element = firstElement;
+    for (int i = 0; i < size; i++) {
+        element = NULL;
+        element = element->next;
+    }
 }
 
 void List::addBeginning(int value) {
@@ -85,7 +89,7 @@ void List::deleteElement(int index) {
         cerr << "Index out of bounds\n";
     } else if (index == 0) {
         deleteFirst();
-    } else if (index == size-1) {
+    } else if (index == size - 1) {
         deleteLast();
     } else {
         element = firstElement;
@@ -96,13 +100,31 @@ void List::deleteElement(int index) {
         element->next->prev = element->prev;
         size--;
     }
+}
 
+void List::find(int value) {
+    element = firstElement;
+    for (int i = 0; i < size; i++) {
+        if (element->value == value) {
+            cout << "Element znajduje sie na pozycji :" << i << endl;
+            return;
+        }
+        element=element->next;
+    }
+    cout << "Nie ma takiej wartosci w liscie !\n";
 }
 
 void List::printList() {
     element = firstElement;
     for (int i = 0; i < size; i++) {
-        cout << "[" << i << "] = " << element->value << endl;
+        cout << element->value << " ";
         element = element->next;
     }
+    cout << endl;
+    element = lastElement;
+    for (int i = 0; i < size; i++) {
+        cout << element->value << " ";
+        element = element->prev;
+    }
+    cout << endl;
 }
