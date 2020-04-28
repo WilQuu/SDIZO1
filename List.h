@@ -39,6 +39,8 @@ public:
 
     void printList();
 
+    void find(int value);
+
     List();
 
     ~List();
