@@ -30,10 +30,11 @@ void Array::addBegining(int value) {
     delete headPointer;
     headPointer = tempHeadPointer;
 }
+
 /* return index of element with expected value */
 int Array::getElement(int value) {
-    for(int i=0;i<size;i++){
-        if(headPointer[i]==value)
+    for (int i = 0; i < size; i++) {
+        if (headPointer[i] == value)
             return i;
     }
     /* value of -1 means there is no value that was set as a parameter of function*/
@@ -62,7 +63,7 @@ void Array::add(int index, int value) {
         tempHeadPointer[index] = value;
 
         for (int i = index + 1; i <= size; i++) {
-            tempHeadPointer[i] = headPointer[i-1];
+            tempHeadPointer[i] = headPointer[i - 1];
         }
         size++;
         delete[]headPointer;
@@ -115,6 +116,20 @@ void Array::deleteElement(int index) {
     }
 }
 
+void Array::find(int value) {
+    bool exist = false;
+    for (int i = 0; i < size; i++) {
+        if (headPointer[i] == value) {
+            cout << "Wskazany element znajduje sie na pozycji :" << i << endl;
+            exist = true;
+            i = size;
+        }
+    }
+    if (!exist) {
+        cerr << "Podana wartosc nie znajduje sie w tablicy !\n";
+    }
+}
+
 void Array::printArray() {
     if (size == 0) {
         cerr << "Array is empty\n";
@@ -125,6 +140,3 @@ void Array::printArray() {
         cout << endl;
     }
 }
-
-
-
